@@ -1,0 +1,19 @@
+Project 3 Proposal - Ryan Perrizo
+
+For the final project, I would like to revisit a problem from ML310. Neural networks and convolutional neural networks have always interesting to me, but I feel I still have a level of 'black magic' when it comes to my understanding. I would like to use the CIFAR image dataset once again to train a convolutional neural network. With the time I am saving by using a pre-built dataset, I hope to try more architectures and adjustments, such as 1x1 convolutions, inception models, and implementing known architectures like AlexNet. 
+
+To accomplish this project, I will use TensorFlow and an AWS GPU server. I hope to experiment with subsets of the data locally so I can try more models.
+
+Goals for this project:
+1) Work with tensorflow for the first time
+2) Get a small enough subset of data so I can train models locally on my laptop - and have it be quick enough to try more model setups
+3) Increase my understanding of Nueral Networks and Convolutions
+4) Get good evaluation graphs and metrics to use for future presentations
+5) Plan what I want in my report ahead of time so I am more organized when collecting results
+
+
+Challenges for this project: 
+1) Slow training - my strategy is to pick 3 model setups and tune the one that performs best
+2) Graphs, Getting data into graphs seems difficult when I'm running all my code on a remove server.
+	- Need to look into tensorboard as a possible solution
+	- May just have to setup a jupyter notebook server on the AWS instance
