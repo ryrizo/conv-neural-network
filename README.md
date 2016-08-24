@@ -48,10 +48,13 @@ I started with the preprocessing shown in the Tensorflow Convolutional Neural Ne
 
 *****
 
-Pooling
-Normalization
-Dropout
-Architecture Notes
+#### Pooling
+
+#### Normalization
+
+#### Dropout
+
+#### Architecture Notes
 	- How to connect layers
 	- How different parameters impact size, padding, stride, output depth etc.
 	- 
@@ -59,28 +62,27 @@ Architecture Notes
 
 *****
 
-Simple Model Architecture:
-	- *Input:*  128x24x24x3
-	- *Convolution Layer:* Out: 124x24x24x12
-		Relu activation
-	- *Pool1:* Out 128x12x12x12
-	- *FC:* Out 128x10
-	- *Softmax:* Out 128x10
+#### Simple Model Architecture:
+- **Input:**  128x24x24x3 [batch size, width, height, input depth]
+- **Convolution Layer:** Out: 124x24x24x12 Relu activation
+- **Pool1:** Out 128x12x12x12
+- **FC:** Out 128x10
+- **Softmax:** Out 128x10
 
 ![Simple Arch](images/SimpleArch.png)
 
 Cuda ConvNet Architechture:
-	- Input: 128x24x24x3 
-	- Conv Layer: Out = 128x24x24x64
-		- Filters = 64
-	-Pool 1: Out = 128x12x12x64
-	-Norm 1: Out = 128x12x12x64
-	-Conv Layer 2 = Out 128x12x12x64
-	-Norm 2: Out = 128x12x12x64
-	- Pool 2: Out = 128x6x6x64
-	-Local 3: Out = 128x384
-	- Local 4: Out = 128x192
-	- Softmax: Out = 128x10
+- **Input:** 128x24x24x3 
+- **Conv Layer:** Out = 128x24x24x64
+	- Filters = 64
+-**Pool 1:** Out = 128x12x12x64
+-**Norm 1:** Out = 128x12x12x64
+-**Conv Layer 2:** = Out 128x12x12x64
+-**Norm 2:** Out = 128x12x12x64
+-**Pool 2:** Out = 128x6x6x64
+-**Local 3:** Out = 128x384
+-**Local 4:** Out = 128x192
+-**Softmax:** Out = 128x10
 
 ![Cuda Net](images/CudaNet.png)
 
