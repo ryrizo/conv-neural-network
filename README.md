@@ -120,6 +120,7 @@ Graphed the entropy and loss vs steps to find a somewhat low number of steps whe
 After checking how many predictions had the correct answer as the top choice, the following were the accuracy scores for the two models:
 
 Simple architecture test accuracy after 10k steps: **.543**
+
 Cuda convnet setup test accuracy after 118k steps: **.8174**
 
 ### Conclusion
