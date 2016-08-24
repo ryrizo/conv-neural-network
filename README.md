@@ -44,21 +44,11 @@ I started with the preprocessing shown in the Tensorflow Convolutional Neural Ne
 * Dataset artificially increased by randomly flipping image from left to right
 * Dataset artificially increased by randomly distoring brightness and contrast of images
 
-### About the different layers [I wrote this section for me]
+### Conv Net Layer reference
 
 *****
 
-#### Pooling
-
-#### Normalization
-
-#### Dropout
-
-#### Architecture Notes
-	- How to connect layers
-	- How different parameters impact size, padding, stride, output depth etc.
-	- 
-### Modeling
+[http://cs231n.github.io/convolutional-networks/](http://cs231n.github.io/convolutional-networks)
 
 *****
 
