@@ -75,14 +75,14 @@ Cuda ConvNet Architechture:
 - **Input:** 128x24x24x3 
 - **Conv Layer:** Out = 128x24x24x64
 	- Filters = 64
--**Pool 1:** Out = 128x12x12x64
--**Norm 1:** Out = 128x12x12x64
--**Conv Layer 2:** = Out 128x12x12x64
--**Norm 2:** Out = 128x12x12x64
--**Pool 2:** Out = 128x6x6x64
--**Local 3:** Out = 128x384
--**Local 4:** Out = 128x192
--**Softmax:** Out = 128x10
+- **Pool 1:** Out = 128x12x12x64
+- **Norm 1:** Out = 128x12x12x64
+- **Conv Layer 2:** = Out 128x12x12x64
+- **Norm 2:** Out = 128x12x12x64
+- **Pool 2:** Out = 128x6x6x64
+- **Local 3:** Out = 128x384
+- **Local 4:** Out = 128x192
+- **Softmax:** Out = 128x10 
 
 ![Cuda Net](images/CudaNet.png)
 
