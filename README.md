@@ -74,7 +74,7 @@ I started with the preprocessing shown in the Tensorflow Convolutional Neural Ne
 - **Pool1:**
 	- Spatial Extent (F): 2
 	- Stride (S): 2
-	- Depth: 12
+	- Depth (K): 12
 	- Out: 128x12x12x12
 - **FC:**
 	- Full connected Layer
@@ -87,17 +87,48 @@ Cuda ConvNet Architechture:
 - **Input:** 128x24x24x3  [ batch size, width, height, depth ]
 - **Conv Layer:** Out = 128x24x24x64
 	- Filters (K) = 64
-	- Spatial Extent (F) = 3
+	- Spatial Extent (F) = 5
 	- Stride (S) = 1
-	- Amount of Zero Padding (P) = 1
+	- Padding (P) = 2
+		* padding for 'SAME' = [(out_height - 1)*S + F - in_height]/2
+	- Out: 128x24x24x64
 - **Pool 1:** Out = 128x12x12x64
-- **Norm 1:** Out = 128x12x12x64
+ 	- Max Pooling
+ 	- Stride (S) = 2
+ 	- Size (F) = 3
+ 	- Filters (K) = 64
+ 	- Out: 128x12x12x64
+- **Norm 1:**
+ 	- Local Response Normalization
+ 	- Depth radius = 4
+ 	- Out: 128x12x12x64
 - **Conv Layer 2:** = Out 128x12x12x64
+	- Filters (K) = 64
+	- Spatial Extent (F) = 5
+	- Stride (S) = 1
+	- Padding (P) = 2
+	- Out: 128x12x12x64
 - **Norm 2:** Out = 128x12x12x64
+	- Local Response Normalization
+ 	- Depth radius = 4
+ 	- Out: 128x12x12x64
 - **Pool 2:** Out = 128x6x6x64
-- **Local 3:** Out = 128x384
+	- Max Pooling
+ 	- Stride (S) = 2
+ 	- Size (F) = 3
+ 	- Filters (K) = 64
+ 	- Out: 128x12x12x64
+- **Local 3:**
+	- Relu activated NN layer of size 384
+	- Flattens pooling shape, performs matrix multiplication and adds bias, relu activation
+	- Out: 128x384
 - **Local 4:** Out = 128x192
-- **Softmax:** Out = 128x10 
+	- Relu activated NN layer of size 192
+	- Performas matrix multiplication and adds bias, relu activation 
+	- Out: 128x192
+- **Softmax:**
+	- Performs matrix multiplication and adds bias, performs softmax function creating final 128x10 set of logits
+	- Out: 128x10
 
 ![Cuda Net](images/CudaNet.png)
 
@@ -131,13 +162,13 @@ Cuda convnet setup test accuracy after 118k steps: **.8174**
 When originally planning this project, I thought I wouldn't have a lot of trouble setting up my AWS server with the GPU support. The big hiccup was some additional steps for the Cuda installation on EC2. After finding a blog explaining the step by step for the Cuda install, the remaining tensorflow installation instructions went smoothly.
 
 #### Setting up the Conv Net
-I started with the TensorFlow tutorial for ConvNets and found myself studying the code and trying to reverse engineer the functionality. I reached a point of frustration and realized I would learn more by making a simple architecture without a tutorial.
+I started with the TensorFlow tutorial for ConvNets and found myself studying the code and trying to reverse engineer the functionality. Rather than just running the tutorial, I moved parts of the functionality into a Jupyter notebook server to ensure I knew what was happening. I eventually got the architecture to work, but realized I would learn more by making a simple architecture without a tutorial.
 
 #### Training
 TensorFlow and TensorBoard making training an algorithm very easy. I love the TensorBoard setup which takes a lot of the effort out of visualizing your results. I wish I had been able to try additional architectures and try to tune model architectures more. After the time it took to understand tensorflow, I down scoped my project to focus on getting two working architectures and scores for those architectures.
 
 #### Evaluation
-My biggest dissappointment was not getting a training score vs steps graph for the models. When I tried to run the script to get the periodic test scores for the graph, I ran out of memory. I ran out of time to deal with resource sharing on the server. The CudaNet architecture outperformed my simple architecture as expected. 
+My biggest dissappointment was not getting a training score vs steps graph for the models. When I tried to run the script to get the periodic test scores for the graph, I ran out of memory. I ran out of time to deal with resource sharing on the server. The CudaNet architecture outperformed my simple architecture as expected. I think both models would have some improvements given more training time.
 
 #### What would I do with this dataset given more time?
 I would like to create a presentation that breaks down how convolutional neural networks function. I'd also like to compare different architectures and try to give an opinion on why one is outperforming the other. Typically when I run out of time on a machine learning problem, I want to pursue additional preprocessing of data and additional parameter tuning. I found the architecture aspect of deep learning conv nets really interesting and hope to study them more in the future.
