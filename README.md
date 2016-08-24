@@ -75,6 +75,10 @@ I started with the preprocessing shown in the Tensorflow Convolutional Neural Ne
 
 ![Simple Arch](images/SimpleArch.png)
 
+#### LeNet Architecture (little bit off but similar):
+
+![LeNet Arch](images/LeNetArch.png)
+
 #### Cuda ConvNet Architechture:
 - **Input:** 128x24x24x3  [ batch size, width, height, depth ]
 - **Conv Layer:** Out = 128x24x24x64
