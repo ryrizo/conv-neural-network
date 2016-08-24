@@ -63,7 +63,7 @@ Simple Model Architecture:
 	- *FC:* Out 128x10
 	- *Softmax:* Out 128x10
 
-[Insert Graph]
+![Simple Arch](images/SimpleArch.png)
 
 Cuda ConvNet Architechture:
 	- Input: 128x24x24x3 
@@ -78,7 +78,7 @@ Cuda ConvNet Architechture:
 	- Local 4: Out = 128x192
 	- Softmax: Out = 128x10
 
-[Insert Graph]
+![Cuda Net](images/CudaNet.png)
 
 ### Entropy and Loss Vs Steps
 
@@ -86,8 +86,11 @@ Cuda ConvNet Architechture:
 
 Graphed the entropy and loss vs steps to find a somewhat low number of steps where performance would be different. I decided if I give a model about 10k steps, I should have a reasonable expectation of what the results will look like. 
 
-[Insert Entropy Graph]
-[Insert Loss Graph]
+**Entropy vs Steps for Cuda Net**
+![Entropy Graph](images/EntropyGraph.PNG)
+
+**Loss vs Steps for Cuda Net**
+![Loss Graph](images/TotalLossGraph.PNG)
 
 ### Performance
 
