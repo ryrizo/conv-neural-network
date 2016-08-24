@@ -13,6 +13,10 @@ Labels: The labels are an integer between 0 and 9, representing the category.
 
 The problem is a supervised mulitnomial classification problem. My goal is to minimize the error rate on the test set.
 
+**One Observation**
+
+![ship image](images/ViewOneObservation.PNG)
+
 ### Metrics
 
 *****
