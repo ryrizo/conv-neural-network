@@ -148,6 +148,8 @@ After checking how many predictions had the correct answer as the top choice, th
 
 Simple architecture test accuracy after 10k steps: **.543**
 
+LeNet architecture test accuracy after 10k steps: **.626**
+
 Cuda convnet setup test accuracy after 118k steps: **.8174**
 
 ### Conclusion
