@@ -1,4 +1,4 @@
-# Convulutional Neural Network
+# Convolutional Neural Network
 
 ### About the dataset
 
